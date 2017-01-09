@@ -1,0 +1,55 @@
+/*Color de los bordes: #666.
+Radio del borde: 6px.
+Sombra del cuadro: 2px 2px 5px 0px rgba(50, 50, 50, 0.75).
+Color de la cabecera: #aaa.
+Sombra de la cabecera: 0px 0px 4px 3px #000
+
+*/
+
+
+#div_enviar {display:none;}
+
+/*.alert {display:none;}*/
+/*
+.actualizar_equipo{
+    display:none;
+    visibility: hidden;
+}
+Aunque haga un show de jquery  display:none; no lo mostrara, visibility si
+*/
+
+/*#div_tabla_equipo{visibility: hidden;}*/
+.jugadores_tabla{
+            
+                 box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
+                 border-radius: 6px;
+                 width:400px;
+                 padding: 10px 40px;
+                 border:1px solid #000;
+}
+.jugadores_tabla th {
+                     background-color:#aaa;
+                     text-shadow: 0.1em 0.1em 0.2em 0.2em #333;
+}
+.jugadores_tabla th h3 {
+                        color:#aaa;
+                        /* font-size:20px; */
+                        
+                         text-align:center;
+                         display:block;
+                             text-shadow: 3px 3px 3px #000, 3px 3px 3px #000000;
+                         }
+.jugadores_tabla td {
+                    border-top: 1px solid #000;
+                     
+                    }
+.equipo-description-table{
+   /* border-radius:3px;
+    border:1px solid #000;*/
+
+}
+.equipo-description-table td{
+    color:#000;
+
+}
+/*.alert {visibility: hidden;}*/
