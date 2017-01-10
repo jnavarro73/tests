@@ -56,7 +56,7 @@ class Game {
      * @return array  $state $message $nameFigure
      */
     public function whoisTheWinnerAction($userFigure)
-    { write_log($userFigure);
+    { 
         //TODO error control $userFigure 0-4
         $pcFigure = $this->getPCRandomIdFigure($userFigure);
    
