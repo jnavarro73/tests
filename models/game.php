@@ -37,7 +37,6 @@ class Game {
     {
         $iRandom = mt_rand(0, count($this->aFigures)-1);
         $this->idPcFigure =$iRandom;
-        //return self::$sFigure[$iRandom];
         return $iRandom;
     }
     
@@ -57,7 +56,7 @@ class Game {
      * @return array  $state $message $nameFigure
      */
     public function whoisTheWinnerAction($userFigure)
-    {
+    { write_log($userFigure);
         //TODO error control $userFigure 0-4
         $pcFigure = $this->getPCRandomIdFigure($userFigure);
    
@@ -74,7 +73,6 @@ class Game {
             $message = "Draw";
         }
         //Error controlif
-        //$key_figure= array_column
         return array("state"=>$state,"message"=>$message,"pcFigureName"=>$this->aFigures[$pcFigure]);
     }
 }

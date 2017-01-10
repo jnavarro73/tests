@@ -1,4 +1,8 @@
-
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 $(document).ready(function () {
 
     $("#div_tabla_equipo").hide();
@@ -6,31 +10,32 @@ $(document).ready(function () {
     $(".alert-warning").hide();
 
     //change selection.
-    $("#selectionPC").html('--------');
+    $("#selectionPC").html('');
 
     $("#go_button").click(function () {
         $(".alert-warning").hide();
         var aValue = $('#select_figure option:selected').attr('id');
-        //Only send a ajax call to check the winner if we have selected a figure
+        // console.log('valor:' + aValue);
         if (aValue == "-1") {
                  $('.alert-warning').html('Please select a figure');
                  $(".alert-warning").show();
                  return false;
              }
         else{
-                $.get("/cva/game/whoistheWinner/figure/"+aValue,
+                $.post("game/whoistheWinner/figure/"+aValue,
                         {
                         },
                         function (data) {
-                         
+                           
                         }).done(function (data) {
-                                
-                            data = $.parseJSON(data['datos']);
+                            data = $.parseJSON(data);
+                            data = data['datos'];
                             var state= data['state'];
                             var message= data['message'];
                             var pcFigureName = data['pcFigureName'];
-                            $("#selectionPC").html(pcFigureName);
-                            //$("#div_pcfigure").append("<img src='/cva/img/"+figure_imgpc+".jpg'");
+                         //   alert(state+message);
+                            $("#selectionPC").html('<span>'+pcFigureName+'</span>');
+                            //$("#div_pcfigure").append("<img src='/basic/img/"+figure_imgpc+".jpg'");
                             
                             $('.alert-warning').html('');
                             $('.alert-info').html('');
@@ -40,24 +45,26 @@ $(document).ready(function () {
                             $('.alert-success').hide();
                             
                             switch(state){
-                                case "0":
+                                case 0:
                                     $('.alert-info').html(message);
                                     $(".alert-info").show();
                                 break;
-                                case "1":
+                                case 1:
                                     $('.alert-success').html(message);
                                     $(".alert-success").show();
                                     break;
-                                case "2":
+                                case 2:
                                     $('.alert-warning').html(message);
                                     $(".alert-warning").show();
                                     break;
                             }
+                            
+                            
                    
                 }).fail(function () {
-                  //  alert('fail');
-                     $('.alert-warning').html('Error . Contact administrator');
                     //show message alert box fail xhr call
+                     $('.alert-warning').html('Error . Contact administrator');
+                    
                 });
         
         }

@@ -19,7 +19,6 @@
         <script type="text/javascript" src="/cva/js/actions.js"></script>
         <div class=" text-center">
             <h1>Piedra-Papel-Tijeras-Lagarto-Spock</h1>
-            <img src="/cva/img/game_image.jpg">
         </div>
         <!-- Mensajes-->
         
@@ -39,13 +38,32 @@
                 </div>
             </div>
             <!--form-->
-
+            <div id='composition' class="row">
+            <div id='rules' class='rules col-md-3'>
+                <p>
+                <li> Scissors cuts Paper </li>
+                <li> Paper covers Rock  </li>
+                <li> Rock crushes Lizard </li>
+                <li> Lizard poisons Spock </li> 
+                <li> Spock smashes Scissors </li>
+                <li> Scissors decapitates Lizard </li>
+                <li> Lizard eats Paper </li>
+                <li> Paper disproves Spock </li>
+                <li> Spock vaporizes Rock </li>
+                <li> Rock crushes Scissors </li>
+                </p>
+            </div>
+            <div class='divimage col-md-3'>
+                <img src="/cva/img/game_image.jpg">
+            </div>
+       
+            <div class='myform col-md-5'>
             <form  id="form_actions" role="form">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-6">
                         <label for="Hand" class="control-label">Selecciona un elemento:</label>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-6">
                         <select id="select_figure" class="selectpicker">
                             <option id="-1" selected>--Opciones--</option>
                             <option id='0' value="0">Scissors</option>
@@ -57,21 +75,23 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row pc_random_input form-group">
-                            <label for="pc_random" class="col-lg-2 control-label">Seleccion PC</label>
-                            <div class="col-md-4" id="selectionPC" class="selectionPC">
-                              
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="pc_random" class="control-label">Seleccion Aleatoria del PC:</label>
+                    </div>    
+                    <div class="col-md-6" id="selectionPC" class="selectionPC">
                     </div>
+                       
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button id="go_button" class="btn">GO!</button> 
+                        <input type="button" id="go_button" value="GO!">
                     </div>
                 </div>
             </form>
+            </div>
         </div>
+        </div>       
 </body>
+
+
 

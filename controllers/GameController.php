@@ -27,7 +27,7 @@ class GameController
     protected function getUserFigureAction($params)
     {
         if(key_exists("figure", $params)){
-           // echo "llega figure:".$params['figure'];
+          
             return $params['figure'];
         }
         else{
@@ -46,8 +46,7 @@ class GameController
  
         $aMessage['datos']= $this->oGame->whoisTheWinnerAction($this->userFigure);
         //is an ajax method
-        echo json_encode($aMessage['datos']);
-        //$this->bRender = false;
+        echo json_encode($aMessage);
         
     }
     
