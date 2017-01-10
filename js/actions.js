@@ -5,7 +5,7 @@
  */
 $(document).ready(function () {
 
-    $("#div_tabla_equipo").hide();
+   
     $(".alert-warning").html('');
     $(".alert-warning").hide();
 
